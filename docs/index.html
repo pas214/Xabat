@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xabat - Legal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(24, 20, 12, 0.7);
+            --text-main: #e8e4d8;
+            --text-dim: #9a9280;
+            --accent-gold: #d4af37;
+            --accent-gold-bright: #f4d03f;
+            --accent-amber: #c9962c;
+            --border-glow: rgba(212, 175, 55, 0.35);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.25;
+            animation: float 15s ease-in-out infinite;
+        }
+        .orb-1 { top: -10%; left: -5%; width: 400px; height: 400px; background: var(--accent-gold); }
+        .orb-2 { bottom: -10%; right: -5%; width: 500px; height: 500px; background: var(--accent-amber); animation-delay: -5s; }
+        .orb-3 { top: 40%; left: 50%; width: 300px; height: 300px; background: var(--accent-gold-bright); animation-delay: -10s; opacity: 0.12; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 40px); }
+        }
+
+        header {
+            text-align: center;
+            padding: 8rem 2rem 3rem;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-gold-bright), var(--accent-gold), var(--accent-amber));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            flex: 1;
+        }
+
+        .invite-wrap {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .invite-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-amber), var(--accent-gold-bright));
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .invite-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(212, 175, 55, 0.55);
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .link-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .link-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-3px);
+        }
+
+        .link-card .icon {
+            font-size: 2.2rem;
+        }
+
+        .link-card .label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-gold-bright);
+        }
+
+        .link-card .desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        footer {
+            background: rgba(10, 10, 10, 0.8);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        footer .emergency {
+            color: var(--accent-gold-bright);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 5rem 1rem 3rem; }
+            .link-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <header>
+        <h1>Xabat Legal</h1>
+        <p class="subtitle">Privacy Policy & Terms of Service</p>
+    </header>
+
+    <div class="container">
+        <div class="invite-wrap">
+            <a href="#" class="invite-btn">Invite Xabat</a>
+        </div>
+
+        <div class="link-grid">
+            <a href="privacy.html" class="link-card">
+                <span class="icon">🔒</span>
+                <span class="label">Privacy Policy</span>
+                <span class="desc">What's collected, how long it's kept, who can see it</span>
+            </a>
+            <a href="terms.html" class="link-card">
+                <span class="icon">📄</span>
+                <span class="label">Terms of Service</span>
+                <span class="desc">Acceptable use, what Xabat is and isn't</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Xabat is a civilian reporting and triage tool. It is not a substitute for law enforcement, emergency services, legal advice, or professional support.</p>
+            <p class="emergency">If you or someone else is in immediate danger, contact the appropriate emergency services or a relevant child-protection or law-enforcement authority.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
