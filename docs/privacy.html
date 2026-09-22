@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0a0a12;
-            --bg-card: rgba(20, 20, 31, 0.7);
-            --text-main: #e0e0e0;
-            --text-dim: #8888a0;
-            --accent-pink: #ff79c6;
-            --accent-cyan: #8be9fd;
-            --accent-purple: #bd93f9;
-            --border-glow: rgba(189, 147, 249, 0.3);
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(24, 20, 12, 0.7);
+            --text-main: #e8e4d8;
+            --text-dim: #9a9280;
+            --accent-gold: #d4af37;
+            --accent-gold-bright: #f4d03f;
+            --accent-amber: #c9962c;
+            --border-glow: rgba(212, 175, 55, 0.35);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,12 +40,12 @@
             border-radius: 50%;
             filter: blur(80px);
             z-index: -1;
-            opacity: 0.4;
+            opacity: 0.25;
             animation: float 15s ease-in-out infinite;
         }
-        .orb-1 { top: -10%; left: -5%; width: 400px; height: 400px; background: var(--accent-purple); }
-        .orb-2 { bottom: -10%; right: -5%; width: 500px; height: 500px; background: var(--accent-pink); animation-delay: -5s; }
-        .orb-3 { top: 40%; left: 50%; width: 300px; height: 300px; background: var(--accent-cyan); animation-delay: -10s; opacity: 0.2; }
+        .orb-1 { top: -10%; left: -5%; width: 400px; height: 400px; background: var(--accent-gold); }
+        .orb-2 { bottom: -10%; right: -5%; width: 500px; height: 500px; background: var(--accent-amber); animation-delay: -5s; }
+        .orb-3 { top: 40%; left: 50%; width: 300px; height: 300px; background: var(--accent-gold-bright); animation-delay: -10s; opacity: 0.12; }
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0); }
@@ -63,7 +63,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+            background: linear-gradient(135deg, var(--accent-gold-bright), var(--accent-gold), var(--accent-amber));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -91,11 +91,11 @@
         .card {
             background: var(--bg-card);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.12);
             border-radius: 20px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
@@ -106,7 +106,7 @@
 
         .card h2 {
             font-family: 'Space Grotesk', sans-serif;
-            color: var(--accent-cyan);
+            color: var(--accent-gold-bright);
             margin-bottom: 1rem;
             font-size: 1.6rem;
             display: flex;
@@ -119,13 +119,13 @@
             display: block;
             width: 8px;
             height: 8px;
-            background: var(--accent-pink);
+            background: var(--accent-gold);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-pink);
+            box-shadow: 0 0 10px var(--accent-gold);
             flex-shrink: 0;
         }
 
-        .card p { margin-bottom: 1rem; color: #cccccc; }
+        .card p { margin-bottom: 1rem; color: #ccc4b0; }
         .card p:last-child { margin-bottom: 0; }
 
         .card ul { list-style: none; margin-left: 1rem; margin-bottom: 1rem; }
@@ -133,20 +133,20 @@
             position: relative;
             padding-left: 1.5rem;
             margin-bottom: 0.5rem;
-            color: #cccccc;
+            color: #ccc4b0;
         }
         .card ul li::before {
             content: '◆';
             position: absolute;
             left: 0;
             top: 1px;
-            color: var(--accent-purple);
+            color: var(--accent-amber);
             font-size: 0.8rem;
         }
 
-        .card ol { margin-left: 1.5rem; margin-bottom: 1rem; color: #cccccc; }
+        .card ol { margin-left: 1.5rem; margin-bottom: 1rem; color: #ccc4b0; }
         .card ol li { margin-bottom: 0.5rem; padding-left: 0.5rem; }
-        .card ol li::marker { color: var(--accent-pink); font-weight: bold; }
+        .card ol li::marker { color: var(--accent-gold-bright); font-weight: bold; }
 
         .meta-text {
             text-align: center;
@@ -156,12 +156,12 @@
             font-style: italic;
         }
 
-        strong { color: white; font-weight: 600; }
+        strong { color: #fff8e7; font-weight: 600; }
 
         /* Footer */
         footer {
-            background: rgba(10, 10, 18, 0.8);
-            border-top: 1px solid rgba(189, 147, 249, 0.2);
+            background: rgba(10, 10, 10, 0.8);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
             padding: 3rem 2rem;
             text-align: center;
             backdrop-filter: blur(10px);
@@ -180,7 +180,7 @@
         }
 
         footer .emergency {
-            color: var(--accent-pink);
+            color: var(--accent-gold-bright);
             font-weight: 600;
             margin-top: 1rem;
         }
@@ -191,7 +191,7 @@
             bottom: 2rem;
             right: 2rem;
             background: var(--bg-card);
-            border: 1px solid var(--accent-purple);
+            border: 1px solid var(--accent-gold);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -203,12 +203,12 @@
             pointer-events: none;
             transition: all 0.3s ease;
             z-index: 100;
-            box-shadow: 0 0 15px rgba(189, 147, 249, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
         #toTop.visible { opacity: 1; pointer-events: auto; }
-        #toTop:hover { transform: scale(1.1); background: var(--accent-purple); }
-        #toTop::before { content: '↑'; font-size: 1.5rem; color: white; }
+        #toTop:hover { transform: scale(1.1); background: var(--accent-gold); }
+        #toTop::before { content: '↑'; font-size: 1.5rem; color: #ffffff; opacity: 1; }
 
         @media (max-width: 768px) {
             .card { padding: 1.5rem; }
